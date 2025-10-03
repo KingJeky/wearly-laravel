@@ -15,12 +15,13 @@ use App\Livewire\ProductDetailPage;
 use App\Livewire\ProductsPage;
 use App\Livewire\SuccessPage;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controller\SessionController;
 
 // Route::get('/', function () {
 //     return view('welcome');
 // });
 
-Route::get('/',HomePage::class);
+Route::get('/',HomePage::class)->name('dashboard');
 Route::get('/categories',CategoriesPage::class);
 Route::get('/products',ProductsPage::class);
 Route::get('/cart',CartPage::class);

@@ -15,9 +15,10 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('email')->unique();
+            // tambahkan biar kompatibel dengan default Laravel
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->rememberToken(); // <- tambahkan ini biar sesuai error
+            $table->rememberToken(); // sama dengan ->string('remember_token', 100)->nullable();
             $table->enum('role', ['admin', 'pembeli'])->default('pembeli');
             $table->timestamps();
         });
