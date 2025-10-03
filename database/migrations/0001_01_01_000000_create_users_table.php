@@ -12,15 +12,20 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('users', function (Blueprint $table) {
-           // database/migrations/xxxx_xx_xx_create_users_table.php
-
             $table->id();
+
             $table->string('name');
             $table->string('email')->unique();
-            $table->string('password');
-            $table->enum('role', ['admin', 'pembeli'])->default('pembeli');
-            $table->timestamps();
 
+            // tambahkan biar kompatibel dengan default Laravel
+            $table->timestamp('email_verified_at')->nullable();
+
+            $table->string('password');
+            $table->rememberToken(); // sama dengan ->string('remember_token', 100)->nullable();
+
+            $table->enum('role', ['admin', 'pembeli'])->default('pembeli');
+
+            $table->timestamps();
         });
 
         Schema::create('password_reset_tokens', function (Blueprint $table) {
@@ -44,8 +49,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-         Schema::dropIfExists('sessions');
-         Schema::dropIfExists('password_reset_tokens');
-         Schema::dropIfExists('users');
+        Schema::dropIfExists('sessions');
+        Schema::dropIfExists('password_reset_tokens');
+        Schema::dropIfExists('users');
     }
 };
