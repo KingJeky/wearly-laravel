@@ -15,7 +15,7 @@ use App\Livewire\ProductDetailPage;
 use App\Livewire\ProductsPage;
 use App\Livewire\SuccessPage;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controller\SessionController;
+use App\Http\Controllers\SessionController;
 
 // Route::get('/', function () {
 //     return view('welcome');
@@ -25,7 +25,7 @@ Route::get('/',HomePage::class)->name('dashboard');
 Route::get('/categories',CategoriesPage::class);
 Route::get('/products',ProductsPage::class);
 Route::get('/cart',CartPage::class);
-Route::get('/products/{product}',ProductDetailPage::class);
+Route::get('/products/{slug}',ProductDetailPage::class);
 
 Route::get('/checkout',CheckoutPage::class);
 Route::get('/my-orders',MyOrdersPage::class);

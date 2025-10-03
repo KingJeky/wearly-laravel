@@ -4,7 +4,7 @@
       <div class="flex flex-wrap mb-24 -mx-3">
         <div class="w-full pr-2 lg:w-1/4 lg:block">
           <div class="p-4 mb-5 bg-white border border-gray-200 dark:border-gray-900 dark:bg-gray-900">
-            <h2 class="text-2xl font-bold dark:text-gray-400"> Categories</h2>
+            <h2 class="text-2xl font-bold dark:text-gray-400"> Kategori</h2>
             <div class="w-16 pb-2 mb-6 border-b border-rose-600 dark:border-gray-400"></div>
             <ul>
               @foreach ($categories as $category)
@@ -93,7 +93,7 @@
           <div class="flex flex-wrap items-center ">
 
            @foreach ($products as $product)
-                <div class="w-full px-3 mb-6 sm:w-1/2 md:w-1/3">
+                <div class="w-full px-3 mb-6 sm:w-1/2 md:w-1/3" wire:key="{{ $product->id }}">
               <div class="border border-gray-300 dark:border-gray-700">
                 <div class="relative bg-gray-200">
                   <a href="/products/{{ $product->slug }}" class="">
