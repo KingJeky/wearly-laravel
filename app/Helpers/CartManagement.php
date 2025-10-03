@@ -2,6 +2,9 @@
 
 namespace App\Helpers;
 
+use App\Models\Product;
+use Illuminate\Support\Facades\Cookie;
+
 class CartManagement
 {
 

@@ -2,6 +2,7 @@
 
 namespace App\Livewire;
 
+use App\Models\Product;
 use Livewire\Attributes\Title;
 use Livewire\Component;
 #[Title('Detail Produk - Wearly')]
@@ -16,7 +17,7 @@ class ProductDetailPage extends Component
     {
       
         return view('livewire.product-detail-page',[
-            'product'
+            'product'=> Product::where('slug', $this->slug)->firstOrFail(),
         ]);
     }
 }
