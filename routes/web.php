@@ -30,8 +30,8 @@ Route::get('/checkout',CheckoutPage::class);
 Route::get('/my-orders',MyOrdersPage::class);
 Route::get('/my-orders/{order}',MyOrderDetailPage::class);
 
-Route::get('/login', LoginPage::class);
-Route::get('/register', RegisterPage::class);
+Route::get('/login', LoginPage::class)->name('login');
+Route::get('/register', RegisterPage::class)->name('register');
 Route::get('/forgot', ForgotPasswordPage::class);
 Route::get('/reset', ResetPasswordPage::class);
 

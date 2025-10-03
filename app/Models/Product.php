@@ -8,12 +8,16 @@ class Product extends Model
 {
     protected $fillable = [
         'name',
+        'slug',
         'description',
         'price',
         'stock',
         'image',
+        'is_active',
+        'is_featured',
+        'in_stock',
+        'on_sale',
         'category_id',
-       
     ];
 
     // Relasi ke Category
@@ -33,4 +37,5 @@ class Product extends Model
     {
         return $this->hasMany(OrderItem::class);
     }
+
 }
